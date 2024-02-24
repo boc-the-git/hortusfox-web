@@ -1,0 +1,13 @@
+name: Test!!
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check that ref_name gives me the tag, e.g. v1.0
+        run: |
+          echo ${{ github.ref_name }}
